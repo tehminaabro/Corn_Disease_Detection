@@ -1,7 +1,7 @@
-
 from fastapi import FastAPI, UploadFile, File
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
+from huggingface_hub import hf_hub_download
 import numpy as np
 import json
 from PIL import Image
@@ -10,8 +10,14 @@ import io
 # FastAPI App
 app = FastAPI()
 
+# Download model from Hugging Face
+model_path = hf_hub_download(
+    repo_id="Tehmina-Abro/Corn-Disease-Detection-Model",
+    filename="corn_disease_model.keras"
+)
+
 # Load Model
-model = load_model("corn_disease_model.keras")
+model = load_model(model_path)
 
 # Load Class Names
 with open("class_names.json", "r") as f:
