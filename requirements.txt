@@ -1,0 +1,13 @@
+
+fastapi
+uvicorn
+tensorflow==2.21.0
+numpy
+pandas
+matplotlib
+scikit-learn
+pillow
+python-multipart
+opencv-python
+gunicorn
+h5py
