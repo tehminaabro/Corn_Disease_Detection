@@ -5,4 +5,3 @@ __pycache__/
 images_data/
 images_data_backup/
 .vscode/
-corn_disease_model.keras
